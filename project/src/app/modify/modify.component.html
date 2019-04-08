@@ -1,0 +1,44 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+  <div id="branddiv">
+    <img src="../../assets/imgs/brand.jpg" id="brand">
+  </div>
+  <div id="navbar">
+    <ul>
+        <li><a href="/user/homepage">通知公告</a></li>
+        <li><a href="/user/activity">活动报名</a></li>
+        <li><a href="/user/host">活动申办</a></li>
+        <li><a href="/user/connect">联系我们</a></li>
+        <li><a href='/user/myhome'>个人中心</a></li>
+    </ul>
+  </div>
+  <div id="content">
+      <div id="selectbar">
+        <ul>
+          <li><a href="/user/myhome">个人信息</a></li>
+          <li><a href="/user/myhome">我的报名</a></li>
+          <li><a href="/user/myhome/myhost">我的申办</a></li>
+          <li><a href="/user/myhome/modify">修改密码</a></li>
+        </ul>
+      </div>
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/user/myhome'>个人中心</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/myhome/modify">修改密码</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <br><br>
+          <form>
+            <label>旧密码</label><input [(ngModel)]="person.pwd" placeholder="8~20个数字"><br><br>
+            <label>新密码</label><input [(ngModel)]="newpwd" placeholder="8~20个数字"><br><br>
+            <label>确认新密码</label><input [(ngModel)]="newpwd" placeholder="8~20个数字">
+          </form>
+          <button class="btn btn-sm btn-success" id="btnin" (click)="save()">保存修改</button>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

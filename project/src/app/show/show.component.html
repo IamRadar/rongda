@@ -1,0 +1,66 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+  <div id="branddiv">
+    <img src="../../assets/imgs/brand.jpg" id="brand">
+  </div>
+  <div id="navbar">
+    <ul>
+        <li><a href="/user/homepage">通知公告</a></li>
+        <li><a href="/user/activity">活动报名</a></li>
+        <li><a href="/user/host">活动申办</a></li>
+        <li><a href="/user/connect">联系我们</a></li>
+        <li><a href="/user/myhome">个人中心</a></li>
+    </ul>
+  </div>
+  <div id="content">
+      <div id="lunbocontent">
+        <h1 id="lunbotitle">活动速递</h1>
+        <div id="lunbothing">
+          <ngb-carousel id="carousel" *ngIf="images">
+              <ng-template ngbSlide>
+                <img [src]="images[0]" alt="Random first slide">
+                <div class="carousel-caption">
+                  <h3>10 seconds between slides...</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[1]" alt="Random second slide">
+                <div class="carousel-caption">
+                  <h3>No mouse events...</h3>
+                  <p>This carousel doesn't pause or resume on mouse events</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[2]"  alt="Random third slide">
+                <div class="carousel-caption">
+                  <h3>No keyboard...</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[3]" alt="Random fourth slide">
+                <div class="carousel-caption">
+                  <h3>And no wrap after last slide.</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+        </div>
+      </div>
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/homepage">通知公告</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/show/{{notice.nid}}">{{notice.title}}</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <div id="noticething">
+          <h2 id="title">{{notice.title}}</h2>
+          <div id="time">发布时间:{{notice.date}}&nbsp;&nbsp;&nbsp;&nbsp;作者:{{notice.writer}}</div>
+          <div id="content">{{notice.content}}</div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>
