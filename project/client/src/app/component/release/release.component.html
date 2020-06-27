@@ -1,0 +1,23 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-managerbrandandnav></app-managerbrandandnav>
+  <div id="content">
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/release">发布公告</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <div id="noticewrite">
+              <div><label>标题</label><input #title></div><br><br>
+              <div><label>供稿人</label><input #writer></div><br><br>
+              <quill-editor [style]="{height: '200px'}" [(ngModel)]="content"></quill-editor><br>
+              <button class="btn btn-sm btn-success" id="btnin" (click)="release(title.value,writer.value,content);title.value='';writer.value='';content='';">发布公告</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

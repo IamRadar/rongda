@@ -1,0 +1,161 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+title{
+    color: black;
+    text-align: center;
+}
+#back{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/imgs/backgroud.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+#regorlog{
+    position: fixed;
+    background-color: rgba(255, 251, 240, 0.8);
+    width: 50%;
+    height: 60%;
+    left:25%;
+    top:15%;
+}
+#boxtitle{
+    text-align: center;
+    color: rgb(250, 248, 248);
+    height:25%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(12, 12, 12, 0.8);
+}
+#boxcontent{
+    text-align: center;
+    height: 75%;
+}
+#formcontent{
+    float: left;
+    height:100%;
+    width:60%;
+}
+#denglu{
+    width:100%;
+    height:100%;
+}
+#tab{
+    float: left;
+    width:40%;
+    height:100%;
+}
+.btn1{
+    margin:10%;
+    width:40%;
+    height:30px;
+}
+#btnlog{
+    position: relative;
+    width:20%;
+    height:15%;
+}
+.input-group1 {
+    margin: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 100%;
+}
+.input-group-addon1{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    top:20%;
+    width:15%;
+    height:60%;
+    float:left;
+}
+.form-control1{
+    display:table-cell;
+    top:20%;
+    height: 60%;
+    width:55%;
+    float: left;
+}
+.loginput{
+    width:15%;
+    height:60%;
+    margin: 0px;
+}
+.form-actions {
+    margin-top: 18px;
+}
+.form-group {
+    margin-bottom: 0px !important;
+    margin:auto;
+}
+form{
+    height:100%;
+    width:100%;
+}
+
+#zhuce{
+    width:100%;
+    height:100%;
+}
+span.input-group-addon{
+    position: relative;
+    top:30%;
+}
+span.glyphicon glyphicon-lock{
+    width:100%;
+    height:100%;
+}
+#form1{
+    height:20%;
+}
+.radio-inline{
+    padding-left: 20%;
+    float:left;
+}
+.input-group2{
+    margin: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
+}
+.input-group-addon2{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    top:20%;
+    width:15%;
+    height:60%;
+    float:left;
+}
+.form-control2{
+    display:table-cell;
+    top:20%;
+    height: 60%;
+    width:55%;
+    float: left;
+}
+#bottombar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 8%;
+    top:92%;
+    text-align: center;
+    background-color: rgb(1, 1, 12);
+    opacity: 0.6;
+    color: white;
+}

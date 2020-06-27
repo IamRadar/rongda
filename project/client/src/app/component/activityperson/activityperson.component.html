@@ -1,0 +1,33 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+  <app-managerbrandandnav></app-managerbrandandnav>
+  <div id="content">
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/manageractivity">活动管理</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/manageractivity/activityperson/{{aaid}}">{{activity.name}}</a></li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <div>
+            <table>
+              <tr>
+                <th>工号</th><th>姓名</th>
+              </tr>
+              <tr *ngFor="let person of persons">
+                <td>{{person.uid}}</td><td>{{person.name}}</td>
+              </tr>
+            </table>
+            <br>
+            <div id="pagediv">
+              <button id="frontbtn" class="btn btn-sm btn-success" (click)="pre()">&#60;&nbsp;&nbsp;上一页</button>
+              <p>第{{page}}/{{pages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{num}}条</p>
+              <button id="backbtn" class="btn btn-sm btn-success" (click)="next()">下一页&nbsp;&nbsp;&#62;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

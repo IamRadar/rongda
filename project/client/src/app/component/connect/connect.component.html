@@ -1,0 +1,67 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-brandandnav></app-brandandnav>
+  <div id="content">
+      <div id="lunbocontent">
+        <h1 id="lunbotitle">活动速递</h1>
+        <div id="lunbothing">
+          <ngb-carousel id="carousel" *ngIf="images">
+              <ng-template ngbSlide>
+                <img [src]="images[0]" alt="Random first slide">
+                <div class="carousel-caption">
+                  <h3>座谈会</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[1]" alt="Random second slide">
+                <div class="carousel-caption">
+                  <h3>化工</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[2]"  alt="Random third slide">
+                <div class="carousel-caption">
+                  <h3>法律讲堂</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[3]" alt="Random fourth slide">
+                <div class="carousel-caption">
+                  <h3>学术沙龙</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+        </div>
+      <app-friend></app-friend>
+      </div>
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/connect">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <div id="noticething">
+          <h2 id="title">联系我们</h2>
+          <br>
+          <div>
+              民主管理办公室：6278275600<br><br>
+              组织部：6279779800<br><br> 
+              宣传部：6279582600<br><br>
+              体育部：6278680000<br><br>
+              财务部：6279289200<br><br>
+              综合办公室：6278200800<br><br>
+              传真:6278300800,6378200800<br><br>　
+              E-Mail:eeee@mail.tju.edu.cn<br><br>
+              地址:卫津路92号<br><br>
+              邮编:300072
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

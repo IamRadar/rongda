@@ -1,0 +1,57 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-managerbrandandnav></app-managerbrandandnav>
+  <div id="content">
+      <div id="selectbar">
+        <ul>
+          <li><a (click)="changetohold()">用户申办活动</a></li>
+          <li><a (click)="changetojoin()">用户报名活动</a></li>
+        </ul>
+      </div>
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/managerhome">用户管理</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+            <li *ngIf="ishold">&nbsp;&nbsp;&nbsp;&nbsp;用户申办活动&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+            <li *ngIf="!ishold">&nbsp;&nbsp;&nbsp;&nbsp;用户参加活动&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <div *ngIf="ishold">
+            <table>
+              <tr>
+                <th>活动名称</th><th>主办方</th><th>开始时间</th><th>活动状态</th>
+              </tr>
+              <tr *ngFor="let host of hosts">
+                <td>{{host.name}}</td><td>{{host.sponsor}}</td><td>{{host.begintime}}</td><td *ngIf="host.state === 0">未审批</td><td *ngIf="host.state === 1">已同意</td><td *ngIf="host.state === 2">已驳回</td>
+              </tr>
+            </table>
+            <br>
+            <div id="pagediv">
+              <button id="frontbtn" class="btn btn-sm btn-success" (click)="hpre()">&#60;&nbsp;&nbsp;上一页</button>
+              <p>第{{hpage}}/{{hpages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{hnum}}条</p>
+              <button id="backbtn" class="btn btn-sm btn-success" (click)="hnext()">下一页&nbsp;&nbsp;&#62;</button>
+            </div>
+          </div>
+          <div *ngIf="!ishold">
+            <table>
+              <tr>
+                <th>活动名称</th><th>主办方</th><th>开始时间</th>
+              </tr>
+              <tr *ngFor="let activity of activities">
+                <td>{{activity.name}}</td><td>{{activity.sponsor}}</td><td>{{activity.begintime}}</td>
+              </tr>
+            </table>
+            <br>
+            <div id="pagediv">
+              <button id="frontbtn" class="btn btn-sm btn-success" (click)="apre()">&#60;&nbsp;&nbsp;上一页</button>
+              <p>第{{apage}}/{{apages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{anum}}条</p>
+              <button id="backbtn" class="btn btn-sm btn-success" (click)="anext()">下一页&nbsp;&nbsp;&#62;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

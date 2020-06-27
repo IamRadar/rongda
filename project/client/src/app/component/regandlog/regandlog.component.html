@@ -1,0 +1,59 @@
+<title>天大工会活动管理系统</title>
+<div id="back">
+	<div id="regorlog">
+		<h1 id="boxtitle">天大工会活动管理系统</h1>
+		<div id="boxcontent">
+			<div id="tab">
+				<button class="btn btn1" (click)="changetolog()">登录页面</button><br>
+				<button class="btn btn1" (click)="changetoreg()">注册页面</button>
+			</div>
+			<div id="formcontent" [ngSwitch]="islog">
+				<div *ngSwitchCase="1" id="denglu">
+					<div class="input-group1">
+						<span class="input-group-addon1"><span
+							class="glyphicon glyphicon-user"></span></span> 
+						<input #uid required type="text" class="form-control1" placeholder="用户名">
+					</div>
+					<div class="input-group1">
+						<span class="input-group-addon1"><span
+							class="glyphicon glyphicon-lock"></span></span> 
+							<input #pwd required type="password" class="form-control1" placeholder="密码">
+					</div>
+					<form id="form1">
+						<label class="radio-inline">
+							<input [(ngModel)]="isteacher" type="radio" name="inlineRadioOptions" value="true"> 教师登录
+						</label>
+						<label class="radio-inline">
+							<input [(ngModel)]="isteacher" type="radio" name="inlineRadioOptions" value="false"> 管理员登录
+						</label>
+					</form>
+					<button class="btn btn-sm btn-success" id="btnlog" (click)="login(uid.value,pwd.value,isteacher);uid.value='';pwd.value='';isteacher=true;">登录</button>
+				</div>
+				<div *ngSwitchCase="0" id="zhuce">
+				    <div class="input-group2">
+						<span class="input-group-addon2"><span
+							class="glyphicon glyphicon-user"></span></span> 
+						<input type="text" #uid class="form-control2" placeholder="用户名(工号)">
+					</div>
+					<div class="input-group2">
+						<span class="input-group-addon2"><span
+							class="glyphicon glyphicon-user"></span></span> 
+						<input type="text" #card class="form-control2" placeholder="身份证号">
+					</div>
+					<div class="input-group2">
+						<span class="input-group-addon2"><span
+							class="glyphicon glyphicon-lock"></span></span> 
+							<input type="password" #pwd class="form-control2" placeholder="密码(7~16位)">
+					</div>
+					<div class="input-group2">
+						<span class="input-group-addon2"><span
+							class="glyphicon glyphicon-lock"></span></span> 
+							<input type="password" #sure class="form-control2" placeholder="确认密码">
+					</div>
+					<button class="btn btn-sm btn-success" id="btnlog" (click)="register(uid.value,pwd.value,card.value,sure.value)">注册</button>
+				</div>
+			</div>
+		</div>		
+	</div>
+    <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>
+</div>

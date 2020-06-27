@@ -1,0 +1,46 @@
+#branddiv{
+    width:100%;
+    height:20%;
+}
+#brand{
+    width:100%;
+    height:100%;
+}
+#navbar{
+    width: 100%;
+    height:6%;
+    background-color: rgb(5, 5, 167);
+    color:white;
+}
+ul{
+    height: 100%;
+    padding:0px;
+}
+#navbar ul li{
+    width:16%;
+    height:100%;
+    color: white;
+    text-align: center;
+    float: left;
+    list-style-type: none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#navbar ul li:hover{
+    background-color: red;
+}
+#navbar ul li a{
+    text-decoration: none;
+    position: relative;
+    color: white;
+    font-size: 150%;
+    width:100%;
+}
+#navbar ul li app-logout{
+    text-decoration: none;
+    position: relative;
+    color: white;
+    font-size: 150%;
+    width:100%;
+}

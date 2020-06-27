@@ -1,0 +1,39 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-brandandnav></app-brandandnav>
+  <div id="content">
+      <div id="selectbar">
+        <ul>
+          <li><a href="/user/myhome">个人信息</a></li>
+          <li><a href="/user/myhome/myapply">我的报名</a></li>
+          <li><a href="/user/myhome/myhost">我的申办</a></li>
+          <li><a href="/user/myhome/modify">修改密码</a></li>
+        </ul>
+      </div>
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/user/myhome'>个人中心</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/myhome/myhost">我的申办</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <table>
+            <tr>
+              <th>活动名称</th><th>主办方</th><th>活动时间</th><th>申请状态</th>
+            </tr>
+            <tr *ngFor="let activity of activities">
+              <td>{{activity.name}}</td><td>{{activity.sponsor}}</td><td>{{activity.begintime}}</td><td *ngIf="activity.state === 0">审核中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-sm btn-success" id="btnlog" (click)="cancel(activity.aid)">取消申请</button></td><td *ngIf="activity.state === 1">审核通过</td><td *ngIf="activity.state === 2">审核失败&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-sm btn-success" id="btnlog" (click)="delete(activity.aid)">删除记录</button></td>
+            </tr>
+          </table>
+          <div id="pagediv">
+            <button id="frontbtn" class="btn btn-sm btn-success" (click)="pre()">&#60;&nbsp;&nbsp;上一页</button>&nbsp;&nbsp;
+            <p>第{{page}}/{{pages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{num}}条</p>&nbsp;&nbsp;
+            <button id="backbtn" class="btn btn-sm btn-success" (click)="next()">下一页&nbsp;&nbsp;&#62;</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

@@ -1,0 +1,39 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-managerbrandandnav></app-managerbrandandnav>
+  <div id="content">
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/managerapply">活动申办批准</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <div>
+            <table>
+              <tr>
+                <th>活动id</th><th>活动名称</th><th>主办方</th><th>举办时间</th><th>总人数</th><th>举办地点</th><th></th>
+              </tr>
+              <tr *ngFor="let host of hosts">
+                  <td>{{host.activity.aid}}</td><td>{{host.activity.name}}</td><td>{{host.activity.sponsor}}</td><td>{{host.activity.begintime}}</td><td>{{host.activity.needp}}</td>
+                  <td>
+                    <select [(ngModel)]="host.sid" (click)="getcanuse(host.activity.aid,host.activity.begintime)">
+                      <option *ngFor="let site of sites" [value]="site.sid">{{site.name}}</option>
+                    </select>
+                  </td>
+                  <td><button class="btn btn-sm btn-success" (click)="agree(host.activity.aid,host.sid)">批准</button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-sm btn-danger" (click)="disagree(host.activity.aid)">驳回</button></td>
+              </tr>
+            </table>
+            <br>
+            <div id="pagediv">
+              <button id="frontbtn" class="btn btn-sm btn-success" (click)="preb()">&#60;&nbsp;&nbsp;上一页</button>
+              <p>第{{beforepage}}/{{beforepages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{beforenum}}条</p>
+              <button id="backbtn" class="btn btn-sm btn-success" (click)="nextb()">下一页&nbsp;&nbsp;&#62;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

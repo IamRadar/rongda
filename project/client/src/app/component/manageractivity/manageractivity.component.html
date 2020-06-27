@@ -1,0 +1,33 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-managerbrandandnav></app-managerbrandandnav>
+  <div id="content">
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/manageractivity">活动管理</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <div>
+            <table>
+              <tr>
+                <th>活动id</th><th>活动名称</th><th>主办方</th><th>举办时间</th><th>时长</th><th>举办地点</th><th>已报名人数</th><th ></th>
+              </tr>
+              <tr *ngFor="let activity of activities">
+                  <td><a href="/manager/manageractivity/activityperson/{{activity.aid}}">{{activity.aid}}</a></td><td><a href="/manager/manageractivity/activityperson/{{activity.aid}}">{{activity.name}}</a></td><td>{{activity.sponsor}}</td><td>{{activity.begintime}}</td><td>{{activity.length}}</td><td>{{activity.sitename}}</td><td>{{activity.numofp}}/{{activity.needp}}</td><td><button class="btn btn-sm btn-danger" id="btnlog" (click)="delete(activity.aid)">取消活动</button></td>
+              </tr>
+            </table>
+            <br>
+            <div id="pagediv">
+              <button id="frontbtn" class="btn btn-sm btn-success" (click)="prea()">&#60;&nbsp;&nbsp;上一页</button>
+              <p>第{{afterpage}}/{{afterpages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{afternum}}条</p>
+              <button id="backbtn" class="btn btn-sm btn-success" (click)="nexta()">下一页&nbsp;&nbsp;&#62;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

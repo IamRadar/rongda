@@ -1,0 +1,41 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-managerbrandandnav></app-managerbrandandnav>
+  <div id="content">
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manager/managersite">场地管理</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <br><br>
+        <div id="noticething">
+          <div>
+            <table>
+              <tr>
+                <th>教室id</th><th>教室号</th><th>教室容量</th><th>使用状态</th>
+              </tr>
+              <tr *ngFor="let site of sites">
+                <td>{{site.sid}}</td><td>{{site.name}}</td><td>{{site.content}}</td><td *ngIf="site.used">已分配</td><td *ngIf="!site.used">未分配&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-sm btn-danger" (click)="delete(site.sid)">删除教室</button></td>
+              </tr>
+            </table>
+            <br>
+            <div id="pagediv">
+              <button id="frontbtn" class="btn btn-sm btn-success" (click)="pre()">&#60;&nbsp;&nbsp;上一页</button>
+              <p>第{{page}}/{{pages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{num}}条</p>
+              <button id="backbtn" class="btn btn-sm btn-success" (click)="next()">下一页&nbsp;&nbsp;&#62;</button>
+            </div>
+            <br>
+            <div id="addsite">
+              <form>
+                <label>教室号</label><input #name type="text"> &nbsp;&nbsp;
+                <label>教室容量</label><input #content type="text">  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-sm btn-success" id="btnin" (click)="add(name.value, content.value);name.value='';content.value='';">添加教室</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>

@@ -1,0 +1,13 @@
+#friend{
+    margin-top: 23%;
+    background-color: white;
+    height: 35%;
+    width:100%;
+}
+#friend a{
+    text-decoration: none;
+    position: relative;
+    color: black;
+    font-size: 150%;
+    width:100%;
+}

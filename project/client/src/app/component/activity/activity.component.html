@@ -1,0 +1,63 @@
+<title>天大工会活动管理系统  首页</title>
+<div id="window">
+    <app-brandandnav></app-brandandnav>
+  <div id="content">
+      <div id="lunbocontent">
+        <h1 id="lunbotitle">活动速递</h1>
+        <div id="lunbothing">
+          <ngb-carousel id="carousel" *ngIf="images">
+              <ng-template ngbSlide>
+                <img [src]="images[0]" alt="Random first slide">
+                <div class="carousel-caption">
+                  <h3>座谈会</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[1]" alt="Random second slide">
+                <div class="carousel-caption">
+                  <h3>化工</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[2]"  alt="Random third slide">
+                <div class="carousel-caption">
+                  <h3>法律讲堂</h3>
+                  <p></p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[3]" alt="Random fourth slide">
+                <div class="carousel-caption">
+                  <h3>学术沙龙</h3>
+                  <p>/p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+        </div>
+        <app-friend></app-friend>
+      </div>
+      <div id="noticecontent">
+        <div id="sitebar">
+          <ul>
+            <li>当前位置:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/activity">活动报名</a>&nbsp;&nbsp;&nbsp;&nbsp;|</li>
+          </ul>
+        </div>
+        <div id="noticething">
+          <ul>
+            <li *ngFor="let activity of activities">
+              <a href="user/takepart/{{activity.aid}}"><div><span class="front">{{activity.name}}</span><span class="back">主办方：{{activity.sponsor}}&nbsp;&nbsp;&nbsp;&nbsp;活动时间：{{activity.begintime}}</span><br></div></a>
+              <span>--------------------------------------------------------------------------</span>
+            </li>
+          </ul>
+          <div id="pagediv">
+            <button id="frontbtn" class="btn btn-sm btn-success" (click)="pre()">&#60;&nbsp;&nbsp;上一页</button>
+            <p>第{{page}}/{{pages}}页&nbsp;&nbsp;&nbsp;&nbsp;共{{num}}条</p>
+            <button id="backbtn" class="btn btn-sm btn-success" (click)="next()">下一页&nbsp;&nbsp;&#62;</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div id="bottombar">版权所有：天津大学工会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：卫津路92号 | 邮编：300072</div>
